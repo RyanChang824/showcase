@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>showcase</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./assets/css/comment.css  '>
+    <script src='./assets/js/comment.js'></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/logo.png" alt="">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="index.html" class="active">首 頁</a></li>
+                        <li><a href="sign up.html">登 入</a></li>
+                        <li><a href="author.html">個人資料</a></li>
+                   
+
+                    </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <section class="content-item" id="comments">
+        <div class="title" style="margin-left: 15%;margin-top:8%">
+            <h2>作品名稱</h2>
+        </div>
+        <video controls width="70%" style="display: flex; ;margin-left: 15%;">
+
+            <source src="/media/cc0-videos/flower.webm"
+                    type="video/webm">
+        
+
+            <source src="./assets/images/阿寶的愛.mp4"
+                    type="video/mp4">
+        
+            Sorry, your browser doesn't support embedded videos.
+        </video>
+        <div class="author">
+            <img src="assets/images/single-author.jpg" alt="" style="border-radius: 50%; max-width: 65px; margin-right: 15px;">
+            <h4>動感見習舞者<br> <a href="#">@lin_is_handsome</a></h4>
+            <div class="detail">
+                <h5>觀看次數:100次<br>2022年8月20日</h5>
+                <button class="btn" id="like-btn">
+                    <div class="like">
+                        喜歡
+                    </div>
+                    <div class="count">
+                        <span>0</span>
+                    </div>
+                </button>
+                <button class="btn" id="follow-btn">追蹤</button>
+            </div>
+        </div>
+        <div class="portfolio">    
+        </div>
+        <div class="container">
+            <comment-box level="0">   
+                <div class="row" style="justify-content: center;">
+                    <div class="col-sm-8">   
+                        <form>
+                            <h3 class="pull-left">留言</h3>
+                            <div class="comment-edit">
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-sm-3 col-lg-2 hidden-xs">
+                                            <img class="img-responsive" style="width: 60px; height: 60px; border-radius: 50%;" src="./assets/images/1111.jpg" alt="">
+                                        </div>
+                                        <div class="underline" style="height: 10;">
+                                            <input class="unfocused-line" placeholder="發表留言..." type="text" >
+                                            <span class="focused-line"></span>
+                                        </div>
+                                    </div>  	
+                                </fieldset>
+                                <button type="submit" class="btn btn-normal pull-right" id="submit-btn">留言</button>
+                                <button type="cancel" class="btn btn-normal pull-right" id="cancel-btn">取消</button>
+                            </div>
+                        </form>
+                        
+                        <h3>4 Comments</h3>
+                        
+                        <!-- COMMENT 1 - START -->
+                        <div class="comment-display">
+                            <div class="media">
+                                <a class="pull-left" href="#"><img class="media-object" src="./assets/images/logo.png" alt=""></a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">showcase</h4>
+                                    <p>123456789</p>
+                                    <ul class="list-unstyled list-inline media-detail pull-left">
+                                        <li><i class="fa fa-calendar"></i>2022/8/20</li>
+                                        <li><i class="likes fa fa-thumbs-up"></i>13</li>
+                                    </ul>
+                                    <ul class="list-unstyled list-inline media-detail pull-right" id="reply-box">
+                                        <button class="btn" id="like-btn">喜歡</button>
+                                        <button class="btn" id="reply-btn">回覆</button>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="replybox"></div>
+                    </div>
+                </div>
+            </comment-box>
+        </div>
+    </section>
+</body>
+<script>
+    $("#reply-btn").click(function(){
+        var htm = "";
+        htm += "<fieldset>";
+        htm += "<div class='row'>";
+        htm += "<div class='col-sm-3 col-lg-2 hidden-xs'>";
+        htm += "<img class='img-responsive' style='width: 40px; height: 40px; border-radius: 50%;' src='./assets/images/1111.jpg' alt=''></div>";
+        htm += "<div class='underline' style='height: 10;'>";
+        htm += "<input class='unfocused-line' placeholder='新增回覆...' type='text' >";
+        htm += "<span class='focused-line'></span></div></div></fieldset>"
+        htm += "<div class='replybtn'><button class='btn' id='cancel-btn'>取消</button>";
+        htm += "<button class='btn' id='reply-btn'>回覆</button></div>";
+        $('#replybox').append(htm);
+    });
+</script>
+</html>

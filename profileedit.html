@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="author" content="templatemo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>showcase</title>
+
+
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/proflieedit.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+  </head>
+
+<body>
+
+
+  <div class="container">
+
+    <h1 class="title">編輯個人檔案</h1>
+    
+
+    
+    <div class="grid">
+
+      <div class="avatar-upload">
+        <div class="avatar-edit">
+            <input type='file' id="avatarUpload" class="imageUpload" data-preview="avatarPreview" name="avatar" accept=".png, .jpg, .jpeg" />
+            <label for="avatarUpload"></label>
+        </div>
+        <div class="preview">
+            <div id="avatarPreview" ></div>
+        </div>
+        <p class="error browser">
+           
+     
+        </p>
+        <p class="error invalid-file"></p>      
+    </div>
+
+   
+
+
+      <div class="form-group a" value="現有">
+        <label for="name">帳號</label>
+        <input id="name" type="text">
+      </div>
+  
+      <div class="form-group b">
+        <label for="first-name">暱稱</label>
+        <input id="first-name" type="text">
+      </div>
+  
+     
+  
+      
+      <div class="textarea-group">
+        <label for="bio">個人簡介</label>
+        <textarea id="bio"></textarea>
+      </div>
+  
+      
+  
+    
+  
+    <div class="button-container">
+      <button class="button">完成</button>
+    </div>
+  </div>
+
+
+  <script>
+    $(function () {
+            'use strict'
+
+            // Hide URL/FileReader API requirement message in capable browsers:
+            if (
+                window.createObjectURL ||
+                window.URL ||
+                window.webkitURL ||
+                window.FileReader
+            ) {
+                $('.browser').hide()
+                $('.preview').children().show()
+            }
+
+            function isDataURL(s) {
+                return !!s.match(isDataURL.regex);
+            }
+            isDataURL.regex = /^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i;
+
+            function readURL(input) {
+
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    var preview = $(input).data('preview');
+                    var _invalid = $(input).parent().parent().find('.invalid-file')
+
+                    reader.onload = function(e) {
+
+                        if( isDataURL(e.target.result) )    {
+
+                            _invalid.hide()
+                            $('#' + preview).css('background-image', 'url('+e.target.result +')');
+                            $('#' + preview).hide();
+                            $('#' + preview).fadeIn(650);
+                        } else {
+
+                            $('#' + preview).hide()
+                            
+                            _invalid.html('<div class="alert alert-danger"><strong>Error!</strong> Invalid image file.</div>')
+                            _invalid.show()
+                        }
+                        
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $('.imageUpload').bind('change', function(e) {
+                e.preventDefault()
+
+                readURL(this)
+            });
+        })
+  </script>
+  </body>
+
+</html>

@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <title>showcase</title>
+    <link rel="stylesheet" href="./assets/css/forget.css".css>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./assets/js/carousel.js"></script>
+    
+</head>
+
+<body>
+
+    <header class="header-area header-sticky">
+        <div class="container1">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            <img src="assets/images/logo.png" alt="">
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li><a href="index.html" class="active">首 頁</a></li>
+                            <li><a href="sign up.html">登 入</a></li>
+                            <li><a href="author.html">個人資料</a></li>
+                       
+    
+                        </ul>   
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+      </header>
+
+    <div class="block">
+        <div class="container" id="container">
+          
+            <div class="form-container sign-in-container">
+                <form action="#">
+                    <h1>忘記密碼</h1>
+                    
+                    <input type="email" placeholder="電子信箱" />
+                    <input type="password" placeholder="帳號" />
+                    
+                    <button>發送</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                   
+                    <div class="overlay-panel overlay-right">
+                        <h1>Showcase</h1>
+                        <p>輸入電子信箱及帳號，我們將發送新的密碼到您的信箱。</p>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+        });
+    </script>
+    
+    
+
+</body>
+
+    
+
+</html>

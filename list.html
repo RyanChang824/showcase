@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>showcase</title>
+    <link rel="stylesheet" href="./assets/css/list.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+  <div class="container">
+    <header class="header">
+      <h4 class="title">追隨名單</h4>
+      <small class="subtitle">搜尋帳號或名稱</small>
+      <input type="text" name="filter" id="filter" placeholder="搜尋" />
+    </header>
+    <ul id="result" class="user-list">
+      <li><h3>Loading...</h3></li>
+    </ul>
+  </div>
+
+
+  <script>
+    const result = document.getElementById("result");
+  const filter = document.getElementById("filter");
+  const listItems = [];
+
+const filterData = (searchTerm) => {
+  listItems.forEach((item) => {
+    if (item.innerText.toLowerCase().includes(searchTerm.toLowerCase())) {
+      item.classList.remove("hide");
+    } else {
+      item.classList.add("hide");
+    }
+  });
+};
+
+function getData(){
+  $.getJSON("list.json", function(data) {
+				console.log(data);
+				result.innerHTML = "";
+  $.each(data,function(infoIndex, info) {
+    console.log(info["name"]);
+    const li = document.createElement("li");
+    listItems.push(li);
+    
+    li.innerHTML = `
+      <img
+            src="${info["Head"]}"
+          />
+      <div class="user-info">
+            <h4>${info["name"]}</h4>
+      </div>
+      `;
+    result.appendChild(li);
+  });
+        })
+  
+};
+
+getData();
+
+filter.addEventListener("input", (e) => filterData(e.target.value));
+
+  </script>
+</body>
